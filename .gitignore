@@ -43,3 +43,14 @@ local.properties
 
 # PDT-specific
 .buildpath
+
+#Android Studio
+  /gen/
+  /bin/
+  /.gradle/
+  /build/
+  /gradle-app.setting 
+  .*.md.html  
+  .DS_Store
+  .idea/workspace.xml
+  /local.properties
