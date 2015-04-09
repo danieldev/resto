@@ -59,7 +59,7 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 		Product product = products.get(position);
 		holder.name.setText(product.getName());
 		holder.price.setText(currencyFormatter.format(product.getPrice()));
-		holder.image.setBackgroundResource(R.drawable.entree1);
+		holder.image.setBackgroundResource(product.getImage());
 		holder.add.setTag(position);
 		holder.add.setOnClickListener(new OnClickListener() {
 

@@ -45,7 +45,7 @@
             android:gravity="center_horizontal"
             android:padding="15dp"
             android:text="@string/your_order"
-            android:textSize="16sp" >
+            android:textSize="22sp" >
         </TextView>
 
         <ListView
@@ -53,29 +53,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/order_headline"
-            android:paddingBottom="90dp" />
+            android:paddingBottom="100dp" />
         
         <TextView
             android:id="@+id/order_sum"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:gravity="center"
             android:layout_above="@+id/order_order"
             android:text="@string/placeholder"
-            android:textSize="16sp" >
+            android:textSize="20sp" >
         </TextView>
 
         <Button
             android:id="@+id/order_order"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:gravity="center"
             android:singleLine="false"
             android:text="Commander"
             android:background="@color/green_transparent"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
     </RelativeLayout>
 
 </LinearLayout>

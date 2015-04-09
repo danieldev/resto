@@ -4,16 +4,27 @@
     android:layout_height="wrap_content"
     android:padding="10dp" >
 
-    <TextView
-        android:id="@+id/order_quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/order_remove"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="5dp"
+        android:src="@drawable/ic_delete_black_48dp" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/order_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:layout_toEndOf="@+id/order_remove"
+        android:layout_toRightOf="@+id/order_remove"
         android:text="@string/placeholder"
-        android:textSize="16sp" >
+        android:textSize="20sp" >
     </TextView>
 
     <TextView
@@ -29,7 +40,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:text="@string/placeholder"
-        android:textSize="16sp" >
+        android:textSize="20sp" >
     </TextView>
 
     <TextView
@@ -40,7 +51,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="@string/placeholder"
-        android:textSize="16sp" >
+        android:textSize="20sp" >
     </TextView>
 
 </RelativeLayout>

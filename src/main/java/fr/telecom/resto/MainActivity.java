@@ -9,15 +9,15 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import fr.telecom.resto.Adapter.OrderListAdapter;
+import fr.telecom.resto.Adapter.OrderListAdapter.OnProductRemovedListener;
 import fr.telecom.resto.Adapter.ProductListAdapter.OnProductSelectedListener;
 import fr.telecom.resto.Adapter.TabsPagerAdapter;
 import fr.telecom.resto.Model.Product;
 import fr.telecom.resto.SlidingTab.SlidingTabLayout;
 
 public class MainActivity extends FragmentActivity implements
-		OnProductSelectedListener {
+		OnProductSelectedListener, OnProductRemovedListener {
 
 	ListView orderList;
 	OrderListAdapter adapter;
@@ -53,8 +53,6 @@ public class MainActivity extends FragmentActivity implements
 
 	@Override
 	public void onProductSelected(Product product) {
-		Toast.makeText(this, "Product: " + product.getName(),
-				Toast.LENGTH_SHORT).show();
 		for (Product p : products) {
 			if (product.equals(p)) {
 				p.setQuantity(p.getQuantity() + 1);
@@ -69,6 +67,13 @@ public class MainActivity extends FragmentActivity implements
 		product.setSum(product.getPrice());
 		adapter.add(product);
 		adapter.notifyDataSetChanged();
+		orderSum.setText("Montant: "
+				+ currencyFormatter.format(calculateSum(products)));
+	}
+
+	@Override
+	public void onProductRemoved(Product product) {
+		product.setQuantity(0);
 		orderSum.setText("Montant: "
 				+ currencyFormatter.format(calculateSum(products)));
 	}

@@ -8,16 +8,19 @@ public class Product {
 
 	private String description;
 
+	private int image;
+
 	// The selected quantity in the current order
 	private int quantity;
 
 	// The sum of the order of this product (depending on the quantity)
 	private double sum;
 
-	public Product(String name, double price, String description) {
+	public Product(String name, double price, String description, int image) {
 		this.name = name;
 		this.price = price;
 		this.description = description;
+		this.setImage(image);
 		quantity = 0;
 		sum = 0;
 	}
@@ -54,19 +57,27 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public boolean equals(Product product) {
-		if (getName().equals(product.name) && getPrice() == product.price) {
-			return true;
-		}
-		return false;
-	}
-
 	public double getSum() {
 		return sum;
 	}
 
 	public void setSum(double sum) {
 		this.sum = sum;
+	}
+
+	public int getImage() {
+		return image;
+	}
+
+	public void setImage(int image) {
+		this.image = image;
+	}
+
+	public boolean equals(Product product) {
+		if (getName().equals(product.name) && getPrice() == product.price) {
+			return true;
+		}
+		return false;
 	}
 
 }
