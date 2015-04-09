@@ -1,6 +1,9 @@
 package fr.telecom.resto.Model;
 
-public class Product {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Product implements Parcelable {
 
 	private String name;
 
@@ -23,6 +26,10 @@ public class Product {
 		this.setImage(image);
 		quantity = 0;
 		sum = 0;
+	}
+
+	public Product(Parcel source) {
+		readFromParcel(source);
 	}
 
 	public String getName() {
@@ -79,5 +86,36 @@ public class Product {
 		}
 		return false;
 	}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(this.name);
+		dest.writeDouble(this.price);
+		dest.writeString(this.description);
+		dest.writeInt(this.image);
+	}
+
+	public void readFromParcel(Parcel source) {
+		name = source.readString();
+		price = source.readDouble();
+		description = source.readString();
+		image = source.readInt();
+
+	}
+
+	public static final Parcelable.Creator<Product> CREATOR = new Parcelable.Creator<Product>() {
+		public Product createFromParcel(Parcel in) {
+			return new Product(in);
+		}
+
+		public Product[] newArray(int size) {
+			return new Product[size];
+		}
+	};
 
 }

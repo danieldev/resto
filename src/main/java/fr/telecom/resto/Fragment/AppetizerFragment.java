@@ -3,12 +3,16 @@ package fr.telecom.resto.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import fr.telecom.resto.DetailActivity;
 import fr.telecom.resto.R;
 import fr.telecom.resto.Adapter.ProductListAdapter;
 import fr.telecom.resto.Model.Product;
@@ -17,12 +21,12 @@ public class AppetizerFragment extends Fragment {
 
 	ListView productList;
 	ProductListAdapter adapter;
+	View view;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_appetizer, container,
-				false);
+		view = inflater.inflate(R.layout.fragment_appetizer, container, false);
 
 		List<Product> appetizers = createAppetizers();
 
@@ -30,6 +34,15 @@ public class AppetizerFragment extends Fragment {
 
 		productList = (ListView) view.findViewById(R.id.listview_appetizer);
 		productList.setAdapter(adapter);
+
+		productList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				selectItem(adapter.getItem(position));
+			}
+		});
 
 		return view;
 	}
@@ -54,6 +67,12 @@ public class AppetizerFragment extends Fragment {
 		appetizers.add(p5);
 
 		return appetizers;
+	}
+
+	private void selectItem(Product product) {
+		Intent intent = new Intent(view.getContext(), DetailActivity.class);
+		intent.putExtra(DetailActivity.PRODUCT_TAG, product);
+		startActivity(intent);
 	}
 
 }
