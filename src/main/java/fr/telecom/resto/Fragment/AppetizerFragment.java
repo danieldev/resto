@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
+import android.widget.GridView;
 import fr.telecom.resto.DetailActivity;
 import fr.telecom.resto.R;
 import fr.telecom.resto.Adapter.ProductListAdapter;
@@ -19,7 +19,7 @@ import fr.telecom.resto.Model.Product;
 
 public class AppetizerFragment extends Fragment {
 
-	ListView productList;
+	GridView productGrid;
 	ProductListAdapter adapter;
 	View view;
 
@@ -32,10 +32,10 @@ public class AppetizerFragment extends Fragment {
 
 		adapter = new ProductListAdapter(getActivity(), appetizers);
 
-		productList = (ListView) view.findViewById(R.id.listview_appetizer);
-		productList.setAdapter(adapter);
+		productGrid = (GridView) view.findViewById(R.id.grid_appetizer);
+		productGrid.setAdapter(adapter);
 
-		productList.setOnItemClickListener(new OnItemClickListener() {
+		productGrid.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,

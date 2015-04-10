@@ -25,7 +25,8 @@ public class DetailActivity extends Activity {
 		name.setText(product.getName());
 
 		ImageView image = (ImageView) findViewById(R.id.detail_product_image);
-		image.setBackgroundResource(product.getImage());
+		image.setImageDrawable(getResources().getDrawable(
+				product.getImage()));
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}

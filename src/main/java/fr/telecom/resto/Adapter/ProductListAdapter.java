@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import fr.telecom.resto.R;
@@ -21,7 +20,7 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 	private List<Product> products;
 	private LayoutInflater inflater;
 	private OnProductSelectedListener callback;
-	
+
 	NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();
 
 	public ProductListAdapter(Context context, List<Product> products) {
@@ -51,7 +50,7 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 					.findViewById(R.id.product_price);
 			holder.image = (ImageView) convertView
 					.findViewById(R.id.product_image);
-			holder.add = (Button) convertView.findViewById(R.id.product_add);
+			holder.add = (ImageView) convertView.findViewById(R.id.product_add);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
@@ -59,7 +58,8 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 		Product product = products.get(position);
 		holder.name.setText(product.getName());
 		holder.price.setText(currencyFormatter.format(product.getPrice()));
-		holder.image.setBackgroundResource(product.getImage());
+		holder.image.setImageDrawable(context.getResources().getDrawable(
+				product.getImage()));
 		holder.add.setTag(position);
 		holder.add.setOnClickListener(new OnClickListener() {
 
@@ -81,7 +81,7 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 		TextView name;
 		TextView price;
 		ImageView image;
-		Button add;
+		ImageView add;
 	}
 
 	public interface OnProductSelectedListener {

@@ -4,7 +4,6 @@
     <string name="app_name">resto</string>
     <string name="action_settings">Settings</string>
     <string name="placeholder">Placeholder</string>
-    <string name="add_one">+1</string>
     <string name="your_order">Votre commande:</string>
     <string name="activity_detail">Les Détails du produit</string>
 
