@@ -10,7 +10,7 @@
         android:layout_centerInParent="true"
         android:columnWidth="240dp"
         android:gravity="center"
-        android:horizontalSpacing="30dp"
+        android:horizontalSpacing="20dp"
         android:numColumns="auto_fit"
         android:paddingRight="60dp"
         android:paddingEnd="60dp"

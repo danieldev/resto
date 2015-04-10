@@ -54,13 +54,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/order_headline"
             android:paddingBottom="100dp" />
-        
+
         <TextView
             android:id="@+id/order_sum"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:gravity="center"
             android:layout_above="@+id/order_order"
+            android:gravity="center"
             android:text="@string/placeholder"
             android:textSize="20sp" >
         </TextView>
@@ -70,12 +70,13 @@
             android:layout_width="fill_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
+            android:background="@color/green_transparent"
             android:gravity="center"
             android:singleLine="false"
             android:text="Commander"
-            android:background="@color/green_transparent"
+            android:textAllCaps="true"
             android:textColor="@android:color/white"
-            android:textSize="22sp" />
+            android:textSize="24sp" />
     </RelativeLayout>
 
 </LinearLayout>
