@@ -4,9 +4,14 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import fr.telecom.resto.Adapter.OrderListAdapter;
@@ -49,6 +54,36 @@ public class MainActivity extends FragmentActivity implements
 
 		orderSum = (TextView) findViewById(R.id.order_sum);
 		orderSum.setText("Montant: " + currencyFormatter.format(0));
+
+		Button order = (Button) findViewById(R.id.order_order);
+		order.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				new AlertDialog.Builder(MainActivity.this)
+						.setTitle(getString(R.string.order_dialog_title))
+						.setMessage(
+								getString(R.string.order_dialog_text)
+										+ "\n\nVotre montant: "
+										+ currencyFormatter
+												.format(calculateSum(products))+"\n")
+						.setPositiveButton(android.R.string.yes,
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int which) {
+										// continue with delete
+									}
+								})
+						.setNegativeButton(android.R.string.no,
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int which) {
+										// do nothing
+									}
+								}).setIcon(android.R.drawable.ic_dialog_info)
+						.show();
+			}
+		});
 	}
 
 	@Override

@@ -6,5 +6,7 @@
     <string name="placeholder">Placeholder</string>
     <string name="your_order">Votre commande:</string>
     <string name="activity_detail">Les Détails du produit</string>
+    <string name="order_dialog_title">Confirmation</string>
+    <string name="order_dialog_text">Voulez-vous envoyer la commande?</string>
 
 </resources>
