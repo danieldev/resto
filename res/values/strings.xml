@@ -8,5 +8,7 @@
     <string name="activity_detail">Les Détails du produit</string>
     <string name="order_dialog_title">Confirmation</string>
     <string name="order_dialog_text">Voulez-vous envoyer la commande?</string>
+    <string name="description">description : </string>
+    <string name="price">prix : </string>
 
 </resources>

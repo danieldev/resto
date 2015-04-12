@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.text.NumberFormat;
+
 import fr.telecom.resto.Model.Product;
 
 public class DetailActivity extends Activity {
@@ -21,8 +24,20 @@ public class DetailActivity extends Activity {
 		Bundle bundle = getIntent().getExtras();
 		product = bundle.getParcelable(PRODUCT_TAG);
 
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();
+
 		TextView name = (TextView) findViewById(R.id.detail_product_name);
 		name.setText(product.getName());
+
+        TextView description = (TextView) findViewById(R.id.detail_product_description);
+        description.setText(product.getDescription());
+
+        TextView price = (TextView) findViewById(R.id.detail_product_price);
+        price.setText(currencyFormatter.format(product.getPrice()));
+
+        ImageView rating = (ImageView) findViewById(R.id.detail_product_rating);
+        rating.setImageResource(R.drawable.three_stars);
+
 
 		ImageView image = (ImageView) findViewById(R.id.detail_product_image);
 		image.setImageDrawable(getResources().getDrawable(

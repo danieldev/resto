@@ -52,7 +52,7 @@ public class MainDishFragment extends Fragment {
 		List<Product> appetizers = new ArrayList<Product>();
 		Product p1 = new Product("Coq au vin maison", 14.90, "description",
 				R.drawable.main_dish_coq);
-		Product p2 = new Product("Rôti de boeuf à l'oignon caramélisé", 18.90,
+		Product p2 = new Product("RÃ´ti de boeuf Ã  l'oignon caramÃ©lisÃ©", 18.90,
 				"description", R.drawable.main_dish_boeuf);
 
 		appetizers.add(p1);

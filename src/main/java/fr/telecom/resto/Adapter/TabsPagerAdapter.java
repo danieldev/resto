@@ -11,7 +11,7 @@ import fr.telecom.resto.Fragment.MainDishFragment;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
 	final int PAGE_COUNT = 4;
-	private String tabTitles[] = new String[] { "Entrée", "Plat principal",
+	private String tabTitles[] = new String[] { "EntrÃ©e", "Plat principal",
 			"Dessert", "Boissons" };
 	private Context context;
 

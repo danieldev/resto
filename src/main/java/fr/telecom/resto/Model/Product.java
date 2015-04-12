@@ -11,7 +11,10 @@ public class Product implements Parcelable {
 
 	private String description;
 
+    private int rating;
+
 	private int image;
+
 
 	// The selected quantity in the current order
 	private int quantity;
@@ -56,6 +59,14 @@ public class Product implements Parcelable {
 		this.description = description;
 	}
 
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
 	public int getQuantity() {
 		return quantity;
 	}
@@ -97,6 +108,7 @@ public class Product implements Parcelable {
 		dest.writeString(this.name);
 		dest.writeDouble(this.price);
 		dest.writeString(this.description);
+        dest.writeInt(this.rating);
 		dest.writeInt(this.image);
 	}
 
@@ -104,6 +116,7 @@ public class Product implements Parcelable {
 		name = source.readString();
 		price = source.readDouble();
 		description = source.readString();
+        rating=source.readInt();
 		image = source.readInt();
 
 	}

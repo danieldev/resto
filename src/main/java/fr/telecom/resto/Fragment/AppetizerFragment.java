@@ -49,13 +49,14 @@ public class AppetizerFragment extends Fragment {
 
 	private List<Product> createAppetizers() {
 		List<Product> appetizers = new ArrayList<Product>();
-		Product p1 = new Product("Terrine de foie gras", 19.90, "description",
+		Product p1 = new Product("Terrine de foie gras", 19.90, "Le foie gras est une spécialité culinaire obtenue après l'engraissement des foies d'oies et de canards.",
 				R.drawable.entree_foie_gras);
-		Product p2 = new Product("Soupe � l'oignon", 4.90, "description",
+        p1.setRating(3);
+		Product p2 = new Product("Soupe à l'oignon", 4.90, "description",
 				R.drawable.entree_soupe);
-		Product p3 = new Product("Soupe � l'oignon du Nord", 5.90,
+		Product p3 = new Product("Soupe à l'oignon du Nord", 5.90,
 				"description", R.drawable.entree_soupe_nord);
-		Product p4 = new Product("Taboul� aux herbes au boulgour", 7.50,
+		Product p4 = new Product("Taboulé aux herbes au boulgour", 7.50,
 				"description", R.drawable.entree_taboule);
 		Product p5 = new Product("Oeufs cocotte aux herbes", 8.90,
 				"description", R.drawable.entree_oeufs);
