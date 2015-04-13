@@ -3,6 +3,11 @@ package fr.telecom.resto.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.telecom.resto.R;
+
 public class Product implements Parcelable {
 
 	private String name;
@@ -15,6 +20,8 @@ public class Product implements Parcelable {
 
 	private int image;
 
+    private List<String> comments=new ArrayList<String>();
+
 
 	// The selected quantity in the current order
 	private int quantity;
@@ -22,11 +29,12 @@ public class Product implements Parcelable {
 	// The sum of the order of this product (depending on the quantity)
 	private double sum;
 
-	public Product(String name, double price, String description, int image) {
+	public Product(String name, double price, String description,int image) {
 		this.name = name;
 		this.price = price;
 		this.description = description;
 		this.setImage(image);
+        this.rating= 0;
 		quantity = 0;
 		sum = 0;
 	}
@@ -91,6 +99,14 @@ public class Product implements Parcelable {
 		this.image = image;
 	}
 
+    public List<String> getComments() {
+        return comments;
+    }
+
+    public void setComments(ArrayList<String> comments) {
+        this.comments = comments;
+    }
+
 	public boolean equals(Product product) {
 		if (getName().equals(product.name) && getPrice() == product.price) {
 			return true;
@@ -110,6 +126,7 @@ public class Product implements Parcelable {
 		dest.writeString(this.description);
         dest.writeInt(this.rating);
 		dest.writeInt(this.image);
+        dest.writeStringList(this.comments);
 	}
 
 	public void readFromParcel(Parcel source) {
@@ -118,6 +135,7 @@ public class Product implements Parcelable {
 		description = source.readString();
         rating=source.readInt();
 		image = source.readInt();
+        comments=source.createStringArrayList();
 
 	}
 

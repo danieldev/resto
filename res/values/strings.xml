@@ -10,5 +10,6 @@
     <string name="order_dialog_text">Voulez-vous envoyer la commande?</string>
     <string name="description">description : </string>
     <string name="price">prix : </string>
+    <string name="comments">Commentaire : </string>
 
 </resources>

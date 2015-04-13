@@ -37,12 +37,12 @@ public class AppetizerFragment extends Fragment {
 
 		productGrid.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				selectItem(adapter.getItem(position));
-			}
-		});
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                selectItem(adapter.getItem(position));
+            }
+        });
 
 		return view;
 	}
@@ -52,6 +52,8 @@ public class AppetizerFragment extends Fragment {
 		Product p1 = new Product("Terrine de foie gras", 19.90, "Le foie gras est une spécialité culinaire obtenue après l'engraissement des foies d'oies et de canards.",
 				R.drawable.entree_foie_gras);
         p1.setRating(3);
+        p1.getComments().add("Very Good");
+        p1.getComments().add("Excellent!");
 		Product p2 = new Product("Soupe à l'oignon", 4.90, "description",
 				R.drawable.entree_soupe);
 		Product p3 = new Product("Soupe à l'oignon du Nord", 5.90,
