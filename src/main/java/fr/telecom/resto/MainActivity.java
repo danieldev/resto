@@ -24,6 +24,8 @@ import fr.telecom.resto.SlidingTab.SlidingTabLayout;
 public class MainActivity extends FragmentActivity implements
 		OnProductSelectedListener, OnProductRemovedListener {
 
+	//coucou ceci est un essai
+	
 	ListView orderList;
 	OrderListAdapter adapter;
 	ArrayList<Product> products;

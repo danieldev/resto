@@ -18,6 +18,8 @@ public class DetailActivity extends Activity {
 
 	public static final String PRODUCT_TAG = "fr.telecom.resto.DetailActivity.PRODUCT";
 
+	
+	
 	private Product product;
     ListView list;
     ArrayList<String> c=new ArrayList<String>();
