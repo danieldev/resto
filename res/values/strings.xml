@@ -11,5 +11,11 @@
     <string name="description">description : </string>
     <string name="price">prix : </string>
     <string name="comments">Commentaire : </string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string-array name="tableNum_array">
+        <item>No.1</item>
+        <item>No.2</item>
+        <item>No.3</item>
+    </string-array>
 
 </resources>
