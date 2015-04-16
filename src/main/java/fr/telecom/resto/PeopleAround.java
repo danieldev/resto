@@ -152,7 +152,7 @@ public class PeopleAround extends Activity implements
     private void selectItem(Product product) {
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra(DetailActivity.PRODUCT_TAG, product);
-        startActivity(intent);
+        startActivityForResult(intent,1);
     }
 
     @Override
@@ -163,5 +163,17 @@ public class PeopleAround extends Activity implements
         setResult(RESULT_OK, intent);
         finish();
         super.onBackPressed();
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                ArrayList<Product> add = data.getParcelableArrayListExtra("add");
+                for(int i=0;i<add.size();i++){
+                    addProducts.add(add.get(i));
+                }
+            }
+        }
     }
 }
