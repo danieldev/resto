@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -48,6 +49,16 @@ public class MainActivity extends FragmentActivity implements
 		// Center the tabs in the layout
 		slidingTabLayout.setDistributeEvenly(true);
 		slidingTabLayout.setViewPager(viewPager);
+
+        Button buttonPeopleAround= (Button) findViewById(R.id.peopleAround);
+        buttonPeopleAround.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,PeopleAround.class);
+                startActivity(intent);
+
+            }
+        });
 
 		orderList = (ListView) findViewById(R.id.order_listview);
 		products = new ArrayList<Product>();

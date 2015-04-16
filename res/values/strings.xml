@@ -17,5 +17,8 @@
         <item>No.2</item>
         <item>No.3</item>
     </string-array>
+    <string name="title_activity_people_around">PeopleAround</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

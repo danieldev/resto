@@ -3,6 +3,7 @@ package fr.telecom.resto;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,13 +12,26 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 
+import fr.telecom.resto.Adapter.ImagePagerAdapter;
+
 
 public class WelcomeActivity extends Activity {
+
+    int[] mResources = {
+            R.drawable.welcome,
+            R.drawable.entree_foie_gras,
+            R.drawable.main_dish_boeuf,
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
+        ViewPager viewer=(ViewPager)findViewById(R.id.welcomeImages);
+        ImagePagerAdapter imgAdapter=new ImagePagerAdapter(this,mResources);
+        viewer.setAdapter(imgAdapter);
+
         Spinner tableNum=(Spinner)findViewById(R.id.spinnerTableNum);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
