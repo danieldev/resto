@@ -1,6 +1,7 @@
 package fr.telecom.resto.Fragment;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import android.content.Intent;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+
+import fr.telecom.resto.Comparator.ComparatorRating;
 import fr.telecom.resto.DetailActivity;
 import fr.telecom.resto.R;
 import fr.telecom.resto.Adapter.ProductListAdapter;
@@ -29,6 +32,7 @@ public class AppetizerFragment extends Fragment {
 		view = inflater.inflate(R.layout.fragment_appetizer, container, false);
 
 		List<Product> appetizers = createAppetizers();
+        Collections.sort(appetizers,new ComparatorRating());
 
 		adapter = new ProductListAdapter(getActivity(), appetizers);
 
@@ -56,12 +60,16 @@ public class AppetizerFragment extends Fragment {
         p1.getComments().add("Excellent!");
 		Product p2 = new Product("Soupe à l'oignon", 4.90, "description",
 				R.drawable.entree_soupe);
+        p2.setRating(4);
 		Product p3 = new Product("Soupe à l'oignon du Nord", 5.90,
 				"description", R.drawable.entree_soupe_nord);
+        p3.setRating(4);
 		Product p4 = new Product("Taboulé aux herbes au boulgour", 7.50,
 				"description", R.drawable.entree_taboule);
+        p4.setRating(2);
 		Product p5 = new Product("Oeufs cocotte aux herbes", 8.90,
 				"description", R.drawable.entree_oeufs);
+        p5.setRating(5);
 
 		appetizers.add(p1);
 		appetizers.add(p2);
