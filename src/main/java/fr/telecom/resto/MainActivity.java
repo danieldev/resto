@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -50,12 +51,13 @@ public class MainActivity extends FragmentActivity implements
 		slidingTabLayout.setDistributeEvenly(true);
 		slidingTabLayout.setViewPager(viewPager);
 
+        //to see what people around eat
         Button buttonPeopleAround= (Button) findViewById(R.id.peopleAround);
         buttonPeopleAround.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,PeopleAround.class);
-                startActivity(intent);
+                startActivityForResult(intent,1);
 
             }
         });
@@ -133,4 +135,17 @@ public class MainActivity extends FragmentActivity implements
 		}
 		return sum;
 	}
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                ArrayList<Product> addProducts = data.getParcelableArrayListExtra(PeopleAround.TAG);
+                for(int i=0;i<addProducts.size();i++){
+                    onProductSelected((Product) addProducts.get(i));
+                }
+            }
+        }
+    }
 }

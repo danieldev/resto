@@ -3,6 +3,7 @@ package fr.telecom.resto;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -28,7 +29,9 @@ import fr.telecom.resto.Model.Product;
 public class PeopleAround extends Activity implements
         OnProductSelectedListener {
 
+    public static final String TAG = "fr.telecom.resto.PeopleAround.tag";
     ProductListAdapter adapter;
+    ArrayList<Product> addProducts=new ArrayList<Product>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,8 @@ public class PeopleAround extends Activity implements
                 selectItem(adapter.getItem(position));
             }
         });
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 
@@ -111,7 +116,7 @@ public class PeopleAround extends Activity implements
 
         switch (item.getItemId()) {
             case android.R.id.home:
-                onBackPressed();
+                this.onBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -119,7 +124,27 @@ public class PeopleAround extends Activity implements
     }
 
     @Override
-    public void onProductSelected(Product product) {
+    public void onProductSelected(final Product product) {
+
+                new AlertDialog.Builder(PeopleAround.this)
+                        .setTitle(R.string.order_dialog_title)
+                        .setMessage(getString(R.string.confirm_add_product_text) + " " + product.getName() + "\n")
+                        .setPositiveButton(android.R.string.yes,
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,
+                                                        int which) {
+                                        // add product
+                                        addProducts.add(product);
+                                    }
+                                })
+                        .setNegativeButton(android.R.string.no,
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,
+                                                        int which) {
+                                        // do nothing
+                                    }
+                                }).setIcon(android.R.drawable.ic_dialog_info)
+                        .show();
 
 
     }
@@ -128,5 +153,15 @@ public class PeopleAround extends Activity implements
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra(DetailActivity.PRODUCT_TAG, product);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent();
+        intent.putParcelableArrayListExtra(TAG, addProducts);
+        setResult(RESULT_OK, intent);
+        finish();
+        super.onBackPressed();
     }
 }

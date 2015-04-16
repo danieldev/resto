@@ -8,7 +8,7 @@ import java.util.List;
 
 import fr.telecom.resto.R;
 
-public class Product implements Parcelable {
+public class Product implements Parcelable{
 
 	private String name;
 
