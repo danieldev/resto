@@ -23,11 +23,23 @@
             android:layout_height="0px"
             android:layout_weight="1"
             android:background="@android:color/white" />
-        <Button
-            android:id="@+id/peopleAround"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="People Around"/>
+            android:weightSum="2">
+            <Button
+                android:id="@+id/callWaiter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Appeler un servant"/>
+            <Button
+                android:id="@+id/peopleAround"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="People Around"/>
+        </LinearLayout>
     </LinearLayout>
 
     <View

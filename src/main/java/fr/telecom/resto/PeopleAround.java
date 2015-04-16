@@ -159,7 +159,7 @@ public class PeopleAround extends Activity implements
     public void onBackPressed() {
 
         Intent intent = new Intent();
-        intent.putParcelableArrayListExtra(TAG, addProducts);
+        intent.putParcelableArrayListExtra("add", addProducts);
         setResult(RESULT_OK, intent);
         finish();
         super.onBackPressed();

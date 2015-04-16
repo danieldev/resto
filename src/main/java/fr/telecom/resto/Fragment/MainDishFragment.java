@@ -64,7 +64,7 @@ public class MainDishFragment extends Fragment {
 	private void selectItem(Product product) {
 		Intent intent = new Intent(view.getContext(), DetailActivity.class);
 		intent.putExtra(DetailActivity.PRODUCT_TAG, product);
-		startActivity(intent);
+		startActivityForResult(intent,1);
 	}
 
 }

@@ -141,7 +141,7 @@ public class MainActivity extends FragmentActivity implements
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
-                ArrayList<Product> addProducts = data.getParcelableArrayListExtra(PeopleAround.TAG);
+                ArrayList<Product> addProducts = data.getParcelableArrayListExtra("add");
                 for(int i=0;i<addProducts.size();i++){
                     onProductSelected((Product) addProducts.get(i));
                 }

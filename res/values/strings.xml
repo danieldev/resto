@@ -20,6 +20,6 @@
     </string-array>
     <string name="title_activity_people_around">PeopleAround</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="title_company">À accompagner</string>
 
 </resources>
