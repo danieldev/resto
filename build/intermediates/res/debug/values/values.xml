@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/wajih/Developer/Telecom/resto/res/values/strings.xml -->
+    <eat-comment/>
+    <string-array name="tableNum_array">
+        <item>No.1</item>
+        <item>No.2</item>
+        <item>No.3</item>
+    </string-array>
+    <!-- From: file:/Users/wajih/Developer/Telecom/resto/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="black_transparent">#77000000</color>
+    <color name="green_transparent">#CC088A29</color>
+    <color name="white">#FFFFFF</color>
+    <!-- From: file:/Users/wajih/Developer/Telecom/resto/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/Users/wajih/Developer/Telecom/resto/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <string name="activity_detail">Les Détails du produit</string>
+    <string name="app_name">resto</string>
+    <string name="comments">Commentaire : </string>
+    <string name="confirm_add_product_text"> Voulez-vous commander</string>
+    <string name="description">description : </string>
+    <string name="order_dialog_text">Voulez-vous envoyer la commande?</string>
+    <string name="order_dialog_title">Confirmation</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="price">prix : </string>
+    <string name="title_activity_people_around">PeopleAround</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_company">À accompagner</string>
+    <string name="your_order">Votre commande:</string>
+    <!-- From: file:/Users/wajih/Developer/Telecom/resto/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>
