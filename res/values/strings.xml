@@ -13,13 +13,26 @@
     <string name="price">prix : </string>
     <string name="comments">Commentaire : </string>
     <string name="title_activity_welcome">WelcomeActivity</string>
+
     <string-array name="tableNum_array">
         <item>No.1</item>
         <item>No.2</item>
         <item>No.3</item>
     </string-array>
-    <string name="title_activity_people_around">PeopleAround</string>
 
+    <string name="title_activity_people_around">PeopleAround</string>
     <string name="title_company">À accompagner</string>
+
+    <!-- final activiry -->
+    <string name="final_water_text">Commander eau</string>
+    <string name="final_service_text">Appeler le service</string>
+    <string name="final_rating_text">Votre avis</string>
+    <string name="final_menu_text">Commander autres produits</string>
+    <string name="final_welcome_text">Bon appetit! Veuillez choisir un des services suivantes s\'il vous plaît:</string>
+    <string name="final_service_toast">La service arrive à l\'instant</string>
+    <string name="final_water_toast">Une carafe d\'eau arrive bientôt</string>
+    
+    <!-- rating activity -->
+    <string name="rating_welcome_text">Veuillez donner votres avis sur les produits commandés s\'il vous plaît</string>
 
 </resources>
