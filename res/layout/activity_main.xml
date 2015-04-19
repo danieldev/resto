@@ -32,13 +32,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Appeler un servant"/>
+                android:text="@string/final_service_text"/>
             <Button
                 android:id="@+id/peopleAround"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="People Around"/>
+                android:text="@string/around_me"/>
         </LinearLayout>
     </LinearLayout>
 

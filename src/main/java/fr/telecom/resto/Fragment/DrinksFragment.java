@@ -59,7 +59,7 @@ public class DrinksFragment extends Fragment {
 
         Product p4 = new Product("Orangina", 4, "bouteille 500ml", R.drawable.boisson_orangina);
 
-        Product p5 = new Product("Bi�re 1664", 4, "bouteille 330ml", R.drawable.boisson_1664);
+        Product p5 = new Product("Bière 1664", 4, "bouteille 330ml", R.drawable.boisson_1664);
 
         Product p6 = new Product("Eau plate Vittel", 3, "bouteille 1L", R.drawable.boisson_vittel);
 

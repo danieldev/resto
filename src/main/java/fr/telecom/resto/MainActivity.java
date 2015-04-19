@@ -209,17 +209,17 @@ public class MainActivity extends FragmentActivity implements
                 //Collections.sort(this.appetizers, new ComparatorRating());
                 //new AlertDialog.Builder(this).setTitle("rating").show();
                 ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-                ((TabsPagerAdapter)viewPager.getAdapter()).update("rating");
+                ((TabsPagerAdapter)viewPager.getAdapter()).update("Avis");
                 break;
             }
             case R.id.menuSortName:{
                 ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-                ((TabsPagerAdapter)viewPager.getAdapter()).update("name");
+                ((TabsPagerAdapter)viewPager.getAdapter()).update("Nom");
                 break;
             }
             case R.id.menuSortCalorie:{
                 ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-                ((TabsPagerAdapter)viewPager.getAdapter()).update("calorie");
+                ((TabsPagerAdapter)viewPager.getAdapter()).update("Calories");
                 break;
             }
             default:return super.onOptionsItemSelected(item);

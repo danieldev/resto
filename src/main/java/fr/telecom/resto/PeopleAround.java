@@ -128,7 +128,7 @@ public class PeopleAround extends Activity implements
 
                 new AlertDialog.Builder(PeopleAround.this)
                         .setTitle(R.string.order_dialog_title)
-                        .setMessage(getString(R.string.confirm_add_product_text) + " " + product.getName() + "\n")
+                        .setMessage(getString(R.string.confirm_add_product_text) + " " + product.getName() + " ?\n")
                         .setPositiveButton(android.R.string.yes,
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,

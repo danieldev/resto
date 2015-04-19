@@ -63,20 +63,24 @@ public class AppetizerFragment extends Fragment {
         p1.setCalorie(200);
         p1.getComments().add("Very Good");
         p1.getComments().add("Excellent!");
-		Product p2 = new Product("Soupe à l'oignon", 4.90, "description",
+
+		Product p2 = new Product("Soupe à l'oignon", 4.90, "(Description)",
 				R.drawable.entree_soupe);
         p2.setRating(4);
         p2.setCalorie(250);
+
 		Product p3 = new Product("Soupe à l'oignon du Nord", 5.90,
-				"description", R.drawable.entree_soupe_nord);
+				"(Description)", R.drawable.entree_soupe_nord);
         p3.setRating(4);
         p3.setCalorie(150);
+
 		Product p4 = new Product("Taboulé aux herbes au boulgour", 7.50,
-				"description", R.drawable.entree_taboule);
+				"(Description)", R.drawable.entree_taboule);
         p4.setRating(2);
         p4.setCalorie(300);
+        
 		Product p5 = new Product("Oeufs cocotte aux herbes", 8.90,
-				"description", R.drawable.entree_oeufs);
+				"(Description)", R.drawable.entree_oeufs);
         p5.setRating(5);
         p5.setCalorie(280);
 

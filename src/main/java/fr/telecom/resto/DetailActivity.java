@@ -84,9 +84,9 @@ public class DetailActivity extends Activity implements OnProductSelectedListene
     private List<Product> getAccompany() {
         List<Product> product = new ArrayList<Product>();
         product.add(new Product("Oeufs cocotte aux herbes", 8.90,
-                "description", R.drawable.entree_oeufs));
+                "Description", R.drawable.entree_oeufs));
         product.add(new Product("Oeufs cocotte aux herbes", 8.90,
-                "description", R.drawable.entree_oeufs));
+                "Description", R.drawable.entree_oeufs));
         return product;
     }
 
@@ -106,7 +106,7 @@ public class DetailActivity extends Activity implements OnProductSelectedListene
     public void onProductSelected(final Product product) {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.order_dialog_title)
-                .setMessage(getString(R.string.confirm_add_product_text) + " " + product.getName() + "\n")
+                .setMessage(getString(R.string.confirm_add_product_text) + " " + product.getName() + " ?\n")
                 .setPositiveButton(android.R.string.yes,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
