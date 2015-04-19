@@ -7,5 +7,25 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
-
+    <item
+        android:icon="@drawable/sorting"
+        android:showAsAction="ifRoom"
+        android:title="sorting">
+        <menu>
+            <item
+                android:id="@+id/menuSortRating"
+                android:title="classement" />
+            <item
+                android:id="@+id/menuSortName"
+                android:title="Nom du plat" />
+            <item
+                android:id="@+id/menuSortCalorie"
+                android:title="Calorie"/>
+        </menu>
+    </item>
+    <item android:id="@+id/action_search"
+        android:title="Search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:showAsAction="never"
+        android:actionViewClass="android.widget.SearchView" />
 </menu>

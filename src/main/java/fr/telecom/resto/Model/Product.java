@@ -18,6 +18,8 @@ public class Product implements Parcelable{
 
     private int rating;
 
+    private int calorie;
+
 	private int image;
 
     private List<String> comments=new ArrayList<String>();
@@ -35,6 +37,7 @@ public class Product implements Parcelable{
 		this.description = description;
 		this.setImage(image);
         this.rating= 0;
+        this.calorie=0;
 		quantity = 0;
 		sum = 0;
 	}
@@ -73,6 +76,14 @@ public class Product implements Parcelable{
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public int getCalorie() {
+        return calorie;
+    }
+
+    public void setCalorie(int calorie) {
+        this.calorie = calorie;
     }
 
 	public int getQuantity() {
@@ -125,6 +136,7 @@ public class Product implements Parcelable{
 		dest.writeDouble(this.price);
 		dest.writeString(this.description);
         dest.writeInt(this.rating);
+        dest.writeInt(this.calorie);
 		dest.writeInt(this.image);
         dest.writeStringList(this.comments);
 	}
@@ -134,6 +146,7 @@ public class Product implements Parcelable{
 		price = source.readDouble();
 		description = source.readString();
         rating=source.readInt();
+        calorie=source.readInt();
 		image = source.readInt();
         comments=source.createStringArrayList();
 
