@@ -1,6 +1,7 @@
 package fr.telecom.resto.Fragment;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import android.content.Intent;
@@ -12,6 +13,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+
+import fr.telecom.resto.Comparator.ComparatorCalorie;
+import fr.telecom.resto.Comparator.ComparatorName;
+import fr.telecom.resto.Comparator.ComparatorRating;
 import fr.telecom.resto.DetailActivity;
 import fr.telecom.resto.R;
 import fr.telecom.resto.Adapter.ProductListAdapter;
@@ -22,14 +27,13 @@ public class MainDishFragment extends Fragment {
 	GridView productGrid;
 	ProductListAdapter adapter;
 	View view;
+    List<Product> mainDishes = createMainDishes();
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.fragment_main_dish, container,
 				false);
-
-		List<Product> mainDishes = createMainDishes();
 
 		adapter = new ProductListAdapter(getActivity(), mainDishes);
 
@@ -67,4 +71,21 @@ public class MainDishFragment extends Fragment {
 		startActivityForResult(intent,1);
 	}
 
+    public void sort(String sort){
+        switch (sort){
+            case "rating": {
+                Collections.sort(this.mainDishes, new ComparatorRating());
+                adapter.notifyDataSetChanged();
+            }
+            case "name":{
+                Collections.sort(this.mainDishes,new ComparatorName());
+                adapter.notifyDataSetChanged();
+            }
+            case "calorie":{
+                Collections.sort(this.mainDishes,new ComparatorCalorie());
+                adapter.notifyDataSetChanged();
+            }
+            default: return;
+        }
+    }
 }
