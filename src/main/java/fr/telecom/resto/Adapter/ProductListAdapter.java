@@ -12,6 +12,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import fr.telecom.resto.R;
 import fr.telecom.resto.Model.Product;
 
@@ -49,7 +52,8 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 					.findViewById(R.id.product_name);
 			holder.price = (TextView) convertView
 					.findViewById(R.id.product_price);
-            holder.rating=(RatingBar) convertView.findViewById(R.id.product_rating);
+			holder.rating = (RatingBar) convertView
+					.findViewById(R.id.product_rating);
 			holder.image = (ImageView) convertView
 					.findViewById(R.id.product_image);
 			holder.add = (ImageView) convertView.findViewById(R.id.product_add);
@@ -60,9 +64,11 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 		Product product = products.get(position);
 		holder.name.setText(product.getName());
 		holder.price.setText(currencyFormatter.format(product.getPrice()));
-        holder.rating.setRating(product.getRating());
-		holder.image.setImageDrawable(context.getResources().getDrawable(
-				product.getImage()));
+		holder.rating.setRating(product.getRating());
+
+		Picasso.with(context).load(product.getImage()).centerCrop().fit()
+				.into(holder.image);
+
 		holder.add.setTag(position);
 		holder.add.setOnClickListener(new OnClickListener() {
 
@@ -83,7 +89,7 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 	private class ViewHolder {
 		TextView name;
 		TextView price;
-        RatingBar rating;
+		RatingBar rating;
 		ImageView image;
 		ImageView add;
 	}

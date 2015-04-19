@@ -10,6 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import fr.telecom.resto.R;
 import fr.telecom.resto.Model.Product;
 
@@ -24,7 +27,7 @@ public class RatingListAdapter extends ArrayAdapter<Product> {
 		this.context = context;
 		this.products = products;
 	}
-	
+
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = null;
@@ -36,7 +39,8 @@ public class RatingListAdapter extends ArrayAdapter<Product> {
 			holder = new ViewHolder();
 			holder.name = (TextView) convertView
 					.findViewById(R.id.rating_list_name);
-            holder.rating=(RatingBar) convertView.findViewById(R.id.rating_list_rating_bar);
+			holder.rating = (RatingBar) convertView
+					.findViewById(R.id.rating_list_rating_bar);
 			holder.image = (ImageView) convertView
 					.findViewById(R.id.rating_list_image);
 			convertView.setTag(holder);
@@ -45,9 +49,11 @@ public class RatingListAdapter extends ArrayAdapter<Product> {
 		}
 		Product product = products.get(position);
 		holder.name.setText(product.getName());
-        holder.rating.setRating(product.getRating());
-		holder.image.setImageDrawable(context.getResources().getDrawable(
-				product.getImage()));
+		holder.rating.setRating(product.getRating());
+
+		Picasso.with(context).load(product.getImage()).centerCrop().fit()
+				.into(holder.image);
+
 		return convertView;
 	}
 
@@ -58,7 +64,7 @@ public class RatingListAdapter extends ArrayAdapter<Product> {
 	 */
 	private class ViewHolder {
 		TextView name;
-        RatingBar rating;
+		RatingBar rating;
 		ImageView image;
 	}
 }
