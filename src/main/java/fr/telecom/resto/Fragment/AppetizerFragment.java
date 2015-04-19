@@ -78,7 +78,7 @@ public class AppetizerFragment extends Fragment {
 				"(Description)", R.drawable.entree_taboule);
         p4.setRating(2);
         p4.setCalorie(300);
-        
+
 		Product p5 = new Product("Oeufs cocotte aux herbes", 8.90,
 				"(Description)", R.drawable.entree_oeufs);
         p5.setRating(5);
