@@ -31,7 +31,7 @@ public class DrinksFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater
+		view = inflater
 				.inflate(R.layout.fragment_drinks, container, false);
 
         adapter = new ProductListAdapter(getActivity(), drinks);

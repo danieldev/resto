@@ -37,6 +37,7 @@ public class Product implements Parcelable{
 		this.description = description;
 		this.setImage(image);
         this.rating= 0;
+        this.calorie=0;
 		quantity = 0;
 		sum = 0;
 	}
