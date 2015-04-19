@@ -2,38 +2,39 @@
 <resources>
 
     <string name="app_name">resto</string>
+    <string name="nb_person">Nombre de personnes</string>
     <string name="action_settings">Settings</string>
     <string name="placeholder">Placeholder</string>
-    <string name="your_order">Votre commande:</string>
-    <string name="activity_detail">Les Détails du produit</string>
+    <string name="your_order">Votre commande :</string>
+    <string name="activity_detail">Détails du produit</string>
     <string name="order_dialog_title">Confirmation</string>
-    <string name="order_dialog_text">Voulez-vous envoyer la commande?</string>
-    <string name="confirm_add_product_text"> Voulez-vous commander</string>
-    <string name="description">description : </string>
-    <string name="price">prix : </string>
-    <string name="comments">Commentaire : </string>
+    <string name="order_dialog_text">Voulez-vous envoyer la commande ?</string>
+    <string name="confirm_add_product_text">Voulez-vous commander ?</string>
+    <string name="description">Description : </string>
+    <string name="price">Prix : </string>
+    <string name="comments">Commentaires : </string>
     <string name="title_activity_welcome">WelcomeActivity</string>
 
     <string-array name="tableNum_array">
-        <item>No.1</item>
-        <item>No.2</item>
-        <item>No.3</item>
+        <item>Table No.1</item>
+        <item>Table No.2</item>
+        <item>Table No.3</item>
     </string-array>
 
     <string name="title_activity_people_around">PeopleAround</string>
-    <string name="title_company">À accompagner</string>
+    <string name="title_company">Accompagnement</string>
 
     <!-- final activiry -->
-    <string name="final_water_text">Commander eau</string>
+    <string name="final_water_text">Demander de l\'eau</string>
     <string name="final_service_text">Appeler le service</string>
     <string name="final_rating_text">Votre avis</string>
-    <string name="final_menu_text">Commander autres produits</string>
-    <string name="final_welcome_text">Bon appetit! Veuillez choisir un des services suivantes s\'il vous plaît:</string>
+    <string name="final_menu_text">Commander d\'autres produits</string>
+    <string name="final_welcome_text">Bon appétit ! Vous pouvez choisir un des services suivants :</string>
     <string name="final_service_toast">La service arrive à l\'instant</string>
     <string name="final_water_toast">Une carafe d\'eau arrive bientôt</string>
     
     <!-- rating activity -->
-    <string name="rating_welcome_text">Veuillez donner votres avis sur les produits commandés s\'il vous plaît</string>
+    <string name="rating_welcome_text">Votre avis nous importe ! Veuillez donner votre avis sur les produits que vous avez commandés</string>
     <string name="rating_submit">Envoyer</string>
 
 </resources>

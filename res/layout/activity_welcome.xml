@@ -43,8 +43,16 @@
         android:layout_height="0px"
         android:layout_weight="4"
         android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:layout_below="@+id/welcomeImages"
         android:layout_centerHorizontal="true">
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:text="@string/nb_person"
+            android:padding="10dp"/>
 
         <NumberPicker
             android:layout_width="wrap_content"
@@ -52,21 +60,26 @@
             android:id="@+id/numberPerson"
             android:layout_alignParentBottom="true"
             android:layout_alignLeft="@+id/numberPerson"
-            android:gravity="center" />
+            android:gravity="center"
+            android:padding="10dp"/>-->
 
         <Spinner
             android:layout_width="400px"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/spinnerTableNum"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="8dp"
             android:layout_alignParentBottom="true"
             android:layout_alignTop="@+id/numberPerson"
             android:layout_toLeftOf="@+id/enter"
             android:layout_toRightOf="@+id/numberPerson"/>
+
         <Button
             android:id="@+id/enter"
             android:text="Commander"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:padding="10dp"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/numberPerson"
             android:layout_alignBottom="@+id/numberPerson"

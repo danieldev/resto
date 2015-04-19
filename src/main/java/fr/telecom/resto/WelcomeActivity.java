@@ -41,11 +41,11 @@ public class WelcomeActivity extends Activity {
         // Apply the adapter to the spinner
         tableNum.setAdapter(adapter);
 
-        NumberPicker numPerson = (NumberPicker) findViewById(R.id.numberPerson);
-        numPerson.setMinValue(1);
-        numPerson.setValue(1);
-        numPerson.setMaxValue(8);
-        numPerson.setWrapSelectorWheel(true);
+//        NumberPicker numPerson = (NumberPicker) findViewById(R.id.numberPerson);
+//        numPerson.setMinValue(1);
+//        numPerson.setValue(1);
+//        numPerson.setMaxValue(8);
+//        numPerson.setWrapSelectorWheel(true);
 
         Button enter= (Button) findViewById(R.id.enter);
         enter.setOnClickListener(new View.OnClickListener() {
