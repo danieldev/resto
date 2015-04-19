@@ -34,5 +34,6 @@
     
     <!-- rating activity -->
     <string name="rating_welcome_text">Veuillez donner votres avis sur les produits commandés s\'il vous plaît</string>
+    <string name="rating_submit">Envoyer</string>
 
 </resources>

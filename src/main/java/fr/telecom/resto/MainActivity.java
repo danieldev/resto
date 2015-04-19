@@ -34,6 +34,8 @@ public class MainActivity extends FragmentActivity implements
 
 	NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();
 
+	public static final String PRODUCTS_TAG = "fr.telecom.resto.MainActivity.PRODUCTS";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -90,6 +92,9 @@ public class MainActivity extends FragmentActivity implements
 										Intent intent = new Intent(
 												MainActivity.this,
 												FinalActivity.class);
+										intent.putParcelableArrayListExtra(
+												MainActivity.PRODUCTS_TAG,
+												products);
 										startActivity(intent);
 									}
 								})
