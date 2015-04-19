@@ -52,19 +52,41 @@ public class MainDishFragment extends Fragment {
 		return view;
 	}
 
+
+	
 	private List<Product> createMainDishes() {
-		List<Product> appetizers = new ArrayList<Product>();
-		Product p1 = new Product("Coq au vin maison", 14.90, "description",
-				R.drawable.main_dish_coq);
-		Product p2 = new Product("RÃ´ti de boeuf Ã  l'oignon caramÃ©lisÃ©", 18.90,
-				"description", R.drawable.main_dish_boeuf);
 
-		appetizers.add(p1);
-		appetizers.add(p2);
+        List<Product> dishes = new ArrayList<Product>();
 
-		return appetizers;
-	}
+        Product p3 = new Product("Pizza Margharita", 7.50, "tomate, mozzarella, olives", R.drawable.pizza_margharita);
 
+        Product p4 = new Product("Pizza Bolognese", 11, "tomate, viande hachée, olives, gruyère", R.drawable.pizza_bolognese);
+
+        Product p5 = new Product("Pizza Quattro Formaggi", 11, "tomate, bleu, mozzarella, chèvre, emmenthal", 
+
+R.drawable.pizza_quatroformaggi);
+
+        Product p6 = new Product("Spaghetti Carbonara", 11, "Spaghetti avec jambon creme et fromage", R.drawable.spaghetti_carbonara);
+
+        Product p7 = new Product("Spaghetti Bolognese", 11, "Spaghetti avec sauce tomate et viande hachée", 
+
+R.drawable.spaghetti_bolognese);
+
+        Product p8 = new Product("Tortellini pesto", 10, "Tortellini à la sauce pesto", R.drawable.toretllini_pesto);
+
+        dishes.add(p3);
+        dishes.add(p4);
+        dishes.add(p5);
+        dishes.add(p6);
+        dishes.add(p7);
+        dishes.add(p8);
+
+        return dishes;
+    }
+
+
+	
+	
 	private void selectItem(Product product) {
 		Intent intent = new Intent(view.getContext(), DetailActivity.class);
 		intent.putExtra(DetailActivity.PRODUCT_TAG, product);
