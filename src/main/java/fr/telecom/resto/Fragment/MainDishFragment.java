@@ -60,19 +60,19 @@ public class MainDishFragment extends Fragment {
 
         Product p3 = new Product("Pizza Margharita", 7.50, "tomate, mozzarella, olives", R.drawable.pizza_margharita);
 
-        Product p4 = new Product("Pizza Bolognese", 11, "tomate, viande hachée, olives, gruyère", R.drawable.pizza_bolognese);
+        Product p4 = new Product("Pizza Bolognese", 11, "tomate, viande hachï¿½e, olives, gruyï¿½re", R.drawable.pizza_bolognese);
 
-        Product p5 = new Product("Pizza Quattro Formaggi", 11, "tomate, bleu, mozzarella, chèvre, emmenthal", 
+        Product p5 = new Product("Pizza Quattro Formaggi", 11, "tomate, bleu, mozzarella, chï¿½vre, emmenthal", 
 
 R.drawable.pizza_quatroformaggi);
 
         Product p6 = new Product("Spaghetti Carbonara", 11, "Spaghetti avec jambon creme et fromage", R.drawable.spaghetti_carbonara);
 
-        Product p7 = new Product("Spaghetti Bolognese", 11, "Spaghetti avec sauce tomate et viande hachée", 
+        Product p7 = new Product("Spaghetti Bolognese", 11, "Spaghetti avec sauce tomate et viande hachï¿½e", 
 
 R.drawable.spaghetti_bolognese);
 
-        Product p8 = new Product("Tortellini pesto", 10, "Tortellini à la sauce pesto", R.drawable.toretllini_pesto);
+        Product p8 = new Product("Tortellini pesto", 10, "Tortellini ï¿½ la sauce pesto", R.drawable.tortellini_pesto);
 
         dishes.add(p3);
         dishes.add(p4);
