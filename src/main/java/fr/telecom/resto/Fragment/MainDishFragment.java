@@ -59,20 +59,42 @@ public class MainDishFragment extends Fragment {
         List<Product> dishes = new ArrayList<Product>();
 
         Product p3 = new Product("Pizza Margharita", 7.50, "tomate, mozzarella, olives", R.drawable.pizza_margharita);
+        p3.setRating(2);
+        p3.setCalorie(350);
+        p3.getComments().add("Très moyen...");
+        p3.getComments().add("Délicieux !");
 
         Product p4 = new Product("Pizza Bolognese", 11, "tomate, viande hachée, olives, gruyère", R.drawable.pizza_bolognese);
+        p4.setRating(3);
+        p4.setCalorie(430);
+        p4.getComments().add("La pâte était trop cuite...");
+        p4.getComments().add("Délicieux !");
 
         Product p5 = new Product("Pizza Quattro Formaggi", 11, "tomate, bleu, mozzarella, chèvre, emmental",
-
 R.drawable.pizza_quatroformaggi);
+        p5.setRating(1);
+        p5.setCalorie(420);
+        p5.getComments().add("J'ai vu mieux comme pizza...");
+        p5.getComments().add("Délicieux !");
 
         Product p6 = new Product("Spaghetti Carbonara", 11, "Spaghetti avec jambon creme et fromage", R.drawable.spaghetti_carbonara);
+        p6.setRating(3);
+        p6.setCalorie(550);
+        p6.getComments().add("Très bon mais trop gras...");
+        p6.getComments().add("Délicieux !");
 
         Product p7 = new Product("Spaghetti Bolognese", 11, "Spaghetti avec sauce tomate et viande hachée",
-
 R.drawable.spaghetti_bolognese);
+        p7.setRating(4);
+        p7.setCalorie(400);
+        p7.getComments().add("Excellentissime !");
+        p7.getComments().add("Délicieux !");
 
         Product p8 = new Product("Tortellini pesto", 10, "Tortellini à la sauce pesto", R.drawable.tortellini_pesto);
+        p8.setRating(3);
+        p8.setCalorie(350);
+        p8.getComments().add("Très bon !");
+        p8.getComments().add("Délicieux !");
 
         dishes.add(p3);
         dishes.add(p4);
@@ -94,20 +116,33 @@ R.drawable.spaghetti_bolognese);
 	}
 
     public void sort(String sort){
-        switch (sort){
-            case "rating": {
-                Collections.sort(this.mainDishes, new ComparatorRating());
-                adapter.notifyDataSetChanged();
-            }
-            case "name":{
-                Collections.sort(this.mainDishes,new ComparatorName());
-                adapter.notifyDataSetChanged();
-            }
-            case "calorie":{
-                Collections.sort(this.mainDishes,new ComparatorCalorie());
-                adapter.notifyDataSetChanged();
-            }
-            default: return;
+        if (sort.equals("rating")) {
+            Collections.sort(this.mainDishes,new ComparatorRating());
+            adapter.notifyDataSetChanged();
         }
+        else if (sort.equals("name")) {
+            Collections.sort(this.mainDishes,new ComparatorName());
+            adapter.notifyDataSetChanged();
+        }
+        else if (sort.equals("calorie")) {
+            Collections.sort(this.mainDishes,new ComparatorCalorie());
+            adapter.notifyDataSetChanged();
+        }
+
+//        switch (sort){
+//            case "rating": {
+//                Collections.sort(this.mainDishes, new ComparatorRating());
+//                adapter.notifyDataSetChanged();
+//            }
+//            case "name":{
+//                Collections.sort(this.mainDishes,new ComparatorName());
+//                adapter.notifyDataSetChanged();
+//            }
+//            case "calorie":{
+//                Collections.sort(this.mainDishes,new ComparatorCalorie());
+//                adapter.notifyDataSetChanged();
+//            }
+//            default: return;
+//        }
     }
 }

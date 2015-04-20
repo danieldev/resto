@@ -27,6 +27,8 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import fr.telecom.resto.Adapter.OrderListAdapter;
 import fr.telecom.resto.Adapter.OrderListAdapter.OnProductRemovedListener;
 import fr.telecom.resto.Adapter.ProductListAdapter.OnProductSelectedListener;
@@ -77,6 +79,18 @@ public class MainActivity extends FragmentActivity implements
 
 			}
 		});
+
+        // call service
+        Button callService = (Button) findViewById(R.id.callWaiter);
+        callService.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,
+                        R.string.final_service_toast, Toast.LENGTH_SHORT)
+                        .show();
+
+            }
+        });
 
 		orderList = (ListView) findViewById(R.id.order_listview);
 		products = new ArrayList<Product>();

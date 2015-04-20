@@ -31,7 +31,7 @@
     <string name="final_rating_text">Votre avis</string>
     <string name="final_menu_text">Commander d\'autres produits</string>
     <string name="final_welcome_text">Bon appétit ! Vous pouvez choisir un des services suivants :</string>
-    <string name="final_service_toast">La service arrive à l\'instant</string>
+    <string name="final_service_toast">Un serveur arrive dans quelques instants</string>
     <string name="final_water_toast">Une carafe d\'eau arrive bientôt</string>
     
     <!-- rating activity -->

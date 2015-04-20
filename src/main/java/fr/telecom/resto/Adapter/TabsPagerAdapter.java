@@ -80,6 +80,10 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         if(fragment_main_dish!=null){
             fragment_main_dish.sort(sort_item);
         }
+        DessertFragment fragment_desserts=(DessertFragment) this.fm.findFragmentByTag(tagList.get(2));
+        if(fragment_desserts!=null){
+            fragment_desserts.sort(sort_item);
+        }
         DrinksFragment fragment_drinks=(DrinksFragment) this.fm.findFragmentByTag(tagList.get(3));
         if(fragment_drinks!=null){
             fragment_drinks.sort(sort_item);
