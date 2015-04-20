@@ -113,6 +113,31 @@ public class AppetizerFragment extends Fragment {
 
         appetizers.add(p);
 
+//        Product p2 = new Product("Soupe à l'oignon", 4.90, "(Description)",
+//				R.drawable.entree_soupe);
+//        p2.setRating(4);
+//        p2.setCalorie(250);
+//
+//		Product p3 = new Product("Soupe à l'oignon du Nord", 5.90,
+//				"(Description)", R.drawable.entree_soupe_nord);
+//        p3.setRating(4);
+//        p3.setCalorie(150);
+//
+//		Product p4 = new Product("Taboulé aux herbes au boulgour", 7.50,
+//				"(Description)", R.drawable.entree_taboule);
+//        p4.setRating(2);
+//        p4.setCalorie(300);
+//
+//		Product p5 = new Product("Oeufs cocotte aux herbes", 8.90,
+//				"(Description)", R.drawable.entree_oeufs);
+//        p5.setRating(5);
+//        p5.setCalorie(280);
+//
+//		appetizers.add(p2);
+//		appetizers.add(p3);
+//		appetizers.add(p4);
+//		appetizers.add(p5);
+
 		return appetizers;
 	}
 
