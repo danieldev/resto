@@ -57,38 +57,61 @@ public class AppetizerFragment extends Fragment {
 
 	private List<Product> createAppetizers() {
 		List<Product> appetizers = new ArrayList<Product>();
-		Product p1 = new Product("Terrine de foie gras", 19.90, "Le foie gras est une spécialité culinaire obtenue après l'engraissement des foies d'oies et de canards.",
-				R.drawable.entree_foie_gras);
-        p1.setRating(3);
-        p1.setCalorie(200);
-        p1.getComments().add("Very Good");
-        p1.getComments().add("Excellent!");
 
-		Product p2 = new Product("Soupe à l'oignon", 4.90, "(Description)",
-				R.drawable.entree_soupe);
-        p2.setRating(4);
-        p2.setCalorie(250);
+		Product p = new Product("Misto di verdure", 9.90, "Roquette, artichaut, tomates cerise marinées",
+				R.drawable.misto_di_verdure);
+        p.setRating(3);
+        p.setCalorie(200);
+        p.getComments().add("Délicieux !");
+        p.getComments().add("Excellent");
+        p.getComments().add("Bof");
 
-		Product p3 = new Product("Soupe à l'oignon du Nord", 5.90,
-				"(Description)", R.drawable.entree_soupe_nord);
-        p3.setRating(4);
-        p3.setCalorie(150);
+        appetizers.add(p);
 
-		Product p4 = new Product("Taboulé aux herbes au boulgour", 7.50,
-				"(Description)", R.drawable.entree_taboule);
-        p4.setRating(2);
-        p4.setCalorie(300);
+        p = new Product("Tiramisú primavera", 10.90, "Tiramisú salé au grana padano, poivrons marinés, crème de baslamique",
+                R.drawable.tiramisu_primavera);
+        p.setRating(4);
+        p.setCalorie(300);
+        p.getComments().add("Excellent, meilleur que le tiramisu sucré !");
+        p.getComments().add("Je n'ai pas trop aimé");
 
-		Product p5 = new Product("Oeufs cocotte aux herbes", 8.90,
-				"(Description)", R.drawable.entree_oeufs);
-        p5.setRating(5);
-        p5.setCalorie(280);
+        appetizers.add(p);
 
-		appetizers.add(p1);
-		appetizers.add(p2);
-		appetizers.add(p3);
-		appetizers.add(p4);
-		appetizers.add(p5);
+        p = new Product("La véritable burrata", 8.90, "Burrata (mozzarella au cœur crémeux), huile d’olive et basilic, roquette, poivrons marinés, crème de balsamique",
+                R.drawable.burrata);
+        p.setRating(2);
+        p.setCalorie(350);
+        p.getComments().add("Moyen");
+        p.getComments().add("Pas terrible");
+        p.getComments().add("Délicieux");
+
+        appetizers.add(p);
+
+        p = new Product("Chèvre chaud à l’italienne", 10.50, "Tartines de pain ciabatta aux olives agrémentées de crème ricotta aux herbes, mozzarella et fromage de chèvre, salade de saison, copeaux de fromage italien",
+                R.drawable.chevre_chaud);
+        p.setRating(4);
+        p.setCalorie(300);
+        p.getComments().add("Très bon !");
+        p.getComments().add("Excellent !");
+
+        appetizers.add(p);
+
+        p = new Product("Carpaccio de bœuf", 11.90, "Mariné à l’huile d’olive et basilic, copeaux de fromage italien",
+                R.drawable.carpaccio);
+        p.setRating(4);
+        p.setCalorie(300);
+        p.getComments().add("Excellent !");
+
+        appetizers.add(p);
+
+        p = new Product("Insalata del mare", 10.90, "Gamberi (gambas) et petites noix de Saint-Jacques marinées aux épices citronnées et poêlées, salade de saison, roquette, tomates cerise marinées, pains Del Arte, crème ricotta aux herbes, saumon fumé, citron",
+                R.drawable.insalata);
+        p.setRating(3);
+        p.setCalorie(150);
+        p.getComments().add("Bon et léger");
+        p.getComments().add("Pas terrible");
+
+        appetizers.add(p);
 
 		return appetizers;
 	}
