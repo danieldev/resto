@@ -84,24 +84,36 @@ public class DrinksFragment extends Fragment {
     }
 
     public void sort(String sort){
-        switch (sort){
-            case "rating": {
-                Collections.sort(this.drinks, new ComparatorRating());
-                adapter.notifyDataSetChanged();
-                break;
-            }
-            case "name":{
-                Collections.sort(this.drinks,new ComparatorName());
-                adapter.notifyDataSetChanged();
-                break;
-            }
-            case "calorie":{
-                Collections.sort(this.drinks,new ComparatorCalorie());
-                adapter.notifyDataSetChanged();
-                break;
-            }
-            default: return;
+        if (sort.equals("rating")) {
+            Collections.sort(this.drinks,new ComparatorRating());
+            adapter.notifyDataSetChanged();
         }
+        else if (sort.equals("name")) {
+            Collections.sort(this.drinks,new ComparatorName());
+            adapter.notifyDataSetChanged();
+        }
+        else if (sort.equals("calorie")) {
+            Collections.sort(this.drinks,new ComparatorCalorie());
+            adapter.notifyDataSetChanged();
+        }
+//        switch (sort){
+//            case "rating": {
+//                Collections.sort(this.drinks, new ComparatorRating());
+//                adapter.notifyDataSetChanged();
+//                break;
+//            }
+//            case "name":{
+//                Collections.sort(this.drinks,new ComparatorName());
+//                adapter.notifyDataSetChanged();
+//                break;
+//            }
+//            case "calorie":{
+//                Collections.sort(this.drinks,new ComparatorCalorie());
+//                adapter.notifyDataSetChanged();
+//                break;
+//            }
+//            default: return;
+//        }
     }
 
 }

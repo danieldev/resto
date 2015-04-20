@@ -100,24 +100,36 @@ public class AppetizerFragment extends Fragment {
 	}
 
     public void sort(String sort){
-        switch (sort){
-            case "rating": {
-                Collections.sort(this.appetizers,new ComparatorRating());
-                adapter.notifyDataSetChanged();
-                break;
-            }
-            case "name":{
-                Collections.sort(this.appetizers,new ComparatorName());
-                adapter.notifyDataSetChanged();
-                break;
-            }
-            case "calorie":{
-                Collections.sort(this.appetizers,new ComparatorCalorie());
-                adapter.notifyDataSetChanged();
-                break;
-            }
-            default: return;
+        if (sort.equals("rating")) {
+            Collections.sort(this.appetizers,new ComparatorRating());
+            adapter.notifyDataSetChanged();
         }
+        else if (sort.equals("name")) {
+            Collections.sort(this.appetizers,new ComparatorName());
+            adapter.notifyDataSetChanged();
+        }
+        else if (sort.equals("calorie")) {
+            Collections.sort(this.appetizers,new ComparatorCalorie());
+            adapter.notifyDataSetChanged();
+        }
+//        switch (sort){
+//            case "rating": {
+//                Collections.sort(this.appetizers,new ComparatorRating());
+//                adapter.notifyDataSetChanged();
+//                break;
+//            }
+//            case "name":{
+//                Collections.sort(this.appetizers,new ComparatorName());
+//                adapter.notifyDataSetChanged();
+//                break;
+//            }
+//            case "calorie":{
+//                Collections.sort(this.appetizers,new ComparatorCalorie());
+//                adapter.notifyDataSetChanged();
+//                break;
+//            }
+//            default: return;
+//        }
     }
 
 

@@ -94,20 +94,33 @@ R.drawable.spaghetti_bolognese);
 	}
 
     public void sort(String sort){
-        switch (sort){
-            case "rating": {
-                Collections.sort(this.mainDishes, new ComparatorRating());
-                adapter.notifyDataSetChanged();
-            }
-            case "name":{
-                Collections.sort(this.mainDishes,new ComparatorName());
-                adapter.notifyDataSetChanged();
-            }
-            case "calorie":{
-                Collections.sort(this.mainDishes,new ComparatorCalorie());
-                adapter.notifyDataSetChanged();
-            }
-            default: return;
+        if (sort.equals("rating")) {
+            Collections.sort(this.mainDishes,new ComparatorRating());
+            adapter.notifyDataSetChanged();
         }
+        else if (sort.equals("name")) {
+            Collections.sort(this.mainDishes,new ComparatorName());
+            adapter.notifyDataSetChanged();
+        }
+        else if (sort.equals("calorie")) {
+            Collections.sort(this.mainDishes,new ComparatorCalorie());
+            adapter.notifyDataSetChanged();
+        }
+
+//        switch (sort){
+//            case "rating": {
+//                Collections.sort(this.mainDishes, new ComparatorRating());
+//                adapter.notifyDataSetChanged();
+//            }
+//            case "name":{
+//                Collections.sort(this.mainDishes,new ComparatorName());
+//                adapter.notifyDataSetChanged();
+//            }
+//            case "calorie":{
+//                Collections.sort(this.mainDishes,new ComparatorCalorie());
+//                adapter.notifyDataSetChanged();
+//            }
+//            default: return;
+//        }
     }
 }

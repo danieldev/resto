@@ -14,13 +14,13 @@
         <menu>
             <item
                 android:id="@+id/menuSortRating"
-                android:title="classement" />
+                android:title="Tri par note" />
             <item
                 android:id="@+id/menuSortName"
-                android:title="Nom du plat" />
+                android:title="Tri par nom" />
             <item
                 android:id="@+id/menuSortCalorie"
-                android:title="Calorie"/>
+                android:title="Tri par calories"/>
         </menu>
     </item>
     <item android:id="@+id/action_search"
