@@ -184,20 +184,21 @@ public class MainActivity extends FragmentActivity implements
 
             search.setSearchableInfo(manager.getSearchableInfo(getComponentName()));
 
-            /*
+
             search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
                 @Override
-                public boolean onQueryTextChange(String query) {
+                public boolean onQueryTextChange(String newText) {
 
-                    //loadHistory(query);
-
-                    return true;
-
+                    return false;
                 }
 
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    return false;
+                }
             });
-            */
+
 
         }
         return super.onCreateOptionsMenu(menu);
@@ -206,20 +207,18 @@ public class MainActivity extends FragmentActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menuSortRating:{
-                //Collections.sort(this.appetizers, new ComparatorRating());
-                //new AlertDialog.Builder(this).setTitle("rating").show();
                 ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-                ((TabsPagerAdapter)viewPager.getAdapter()).update("Avis");
+                ((TabsPagerAdapter)viewPager.getAdapter()).update("rating");
                 break;
             }
             case R.id.menuSortName:{
                 ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-                ((TabsPagerAdapter)viewPager.getAdapter()).update("Nom");
+                ((TabsPagerAdapter)viewPager.getAdapter()).update("name");
                 break;
             }
             case R.id.menuSortCalorie:{
                 ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-                ((TabsPagerAdapter)viewPager.getAdapter()).update("Calories");
+                ((TabsPagerAdapter)viewPager.getAdapter()).update("calorie");
                 break;
             }
             default:return super.onOptionsItemSelected(item);
@@ -227,6 +226,8 @@ public class MainActivity extends FragmentActivity implements
         return true;
 
     }
+
+
 
 }
 
