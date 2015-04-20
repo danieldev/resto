@@ -60,6 +60,14 @@ public class DetailActivity extends Activity implements OnProductSelectedListene
 		image.setImageDrawable(getResources().getDrawable(
 				product.getImage()));
 
+        ImageView icon_add= (ImageView) findViewById(R.id.detail_product_add);
+        icon_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onProductSelected(product);
+            }
+        });
+
         //set list view of comments
         list = (ListView) findViewById(R.id.listComments);
         ArrayAdapter<String> adapter1=new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,product.getComments());
