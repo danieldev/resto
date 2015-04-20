@@ -60,6 +60,14 @@ public class DetailActivity extends Activity implements OnProductSelectedListene
 		image.setImageDrawable(getResources().getDrawable(
 				product.getImage()));
 
+        ImageView icon_add= (ImageView) findViewById(R.id.detail_product_add);
+        icon_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onProductSelected(product);
+            }
+        });
+
         //set list view of comments
         list = (ListView) findViewById(R.id.listComments);
         ArrayAdapter<String> adapter1=new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,product.getComments());
@@ -85,8 +93,7 @@ public class DetailActivity extends Activity implements OnProductSelectedListene
         List<Product> product = new ArrayList<Product>();
         product.add(new Product("Oeufs cocotte aux herbes", 8.90,
                 "Description", R.drawable.entree_oeufs));
-        product.add(new Product("Oeufs cocotte aux herbes", 8.90,
-                "Description", R.drawable.entree_oeufs));
+        product.add(new Product("Bière 1664", 4, "bouteille 330ml", R.drawable.boisson_1664));
         return product;
     }
 
