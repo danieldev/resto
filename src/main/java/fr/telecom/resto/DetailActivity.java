@@ -83,10 +83,27 @@ public class DetailActivity extends Activity implements OnProductSelectedListene
 
     private List<Product> getAccompany() {
         List<Product> product = new ArrayList<Product>();
-        product.add(new Product("Oeufs cocotte aux herbes", 8.90,
-                "Description", R.drawable.entree_oeufs));
-        product.add(new Product("Oeufs cocotte aux herbes", 8.90,
-                "Description", R.drawable.entree_oeufs));
+
+        Product p = new Product("Misto di verdure", 9.90, "Roquette, artichaut, tomates cerise marinées",
+                R.drawable.misto_di_verdure);
+        p.setRating(3);
+        p.setCalorie(200);
+        p.getComments().add("Délicieux !");
+        p.getComments().add("Excellent");
+        p.getComments().add("Bof");
+
+        product.add(p);
+
+
+        p = new Product("Tiramisú primavera", 10.90, "Tiramisú salé au grana padano, poivrons marinés, crème de baslamique",
+                R.drawable.tiramisu_primavera);
+        p.setRating(4);
+        p.setCalorie(300);
+        p.getComments().add("Excellent, meilleur que le tiramisu sucré !");
+        p.getComments().add("Je n'ai pas trop aimé");
+
+        product.add(p);
+
         return product;
     }
 

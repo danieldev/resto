@@ -42,6 +42,7 @@ public class PeopleAround extends Activity implements
 
         ImageView table1=(ImageView)findViewById(R.id.table_one);
         ImageView table2=(ImageView)findViewById(R.id.table_two);
+        ImageView table3=(ImageView)findViewById(R.id.table_three);
 
         final TextView title =(TextView) findViewById(R.id.TableNumTitle);
 
@@ -58,6 +59,11 @@ public class PeopleAround extends Activity implements
                         adapter=new ProductListAdapter(PeopleAround.this,getProducts(2));
                         title.setText("Table No.2");
                         break;
+                    case R.id.table_three:
+                        // it was the third button
+                        adapter=new ProductListAdapter(PeopleAround.this,getProducts(3));
+                        title.setText("Table No.3");
+                        break;
                     default:
                         adapter=new ProductListAdapter(PeopleAround.this,new ArrayList());
                 }
@@ -67,6 +73,7 @@ public class PeopleAround extends Activity implements
 
         table1.setOnClickListener(myHandler);
         table2.setOnClickListener(myHandler);
+        table3.setOnClickListener(myHandler);
 
         listProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -83,19 +90,66 @@ public class PeopleAround extends Activity implements
         HashMap<Integer,List<Product>> orders= new HashMap<Integer,List<Product>>();//orders of all tables
 
         List<Product> order1 = new ArrayList<Product>(); //order of table one
-        order1.add(new Product("Soupe à l'oignon", 4.90, "description",
-                R.drawable.entree_soupe));
-        order1.add(new Product("Coq au vin maison", 14.90, "description",
-                R.drawable.main_dish_coq));
+        Product p = new Product("Misto di verdure", 9.90, "Roquette, artichaut, tomates cerise marinées",
+                R.drawable.misto_di_verdure);
+        p.setRating(3);
+        p.setCalorie(200);
+        p.getComments().add("Délicieux !");
+        p.getComments().add("Excellent");
+        p.getComments().add("Bof");
+
+        order1.add(p);
+
+        Product p4 = new Product("Pizza Bolognese", 11, "tomate, viande hachée, olives, gruyère", R.drawable.pizza_bolognese);
+        p4.setRating(3);
+        p4.setCalorie(430);
+        p4.getComments().add("La pâte était trop cuite...");
+        p4.getComments().add("Délicieux !");
+
+        order1.add(p4);
+
 
         List<Product> order2 = new ArrayList<Product>(); //order of table one
-        order2.add(new Product("Oeufs cocotte aux herbes", 8.90,
-                "description", R.drawable.entree_oeufs));
-        order2.add(new Product("Rôti de boeuf à l'oignon caramélisé", 18.90,
-                "description", R.drawable.main_dish_boeuf));
+
+        p = new Product("Tiramisú primavera", 10.90, "Tiramisú salé au grana padano, poivrons marinés, crème de baslamique",
+                R.drawable.tiramisu_primavera);
+        p.setRating(4);
+        p.setCalorie(300);
+        p.getComments().add("Excellent, meilleur que le tiramisu sucré !");
+        p.getComments().add("Je n'ai pas trop aimé");
+
+        order2.add(p);
+
+        Product p6 = new Product("Spaghetti Carbonara", 11, "Spaghetti avec jambon creme et fromage", R.drawable.spaghetti_carbonara);
+        p6.setRating(3);
+        p6.setCalorie(550);
+        p6.getComments().add("Très bon mais trop gras...");
+        p6.getComments().add("Délicieux !");
+
+        order2.add(p6);
+
+        List<Product> order3 = new ArrayList<Product>(); //order of table one
+
+        Product p7 = new Product("Spaghetti Bolognese", 11, "Spaghetti avec sauce tomate et viande hachée",
+                R.drawable.spaghetti_bolognese);
+        p7.setRating(4);
+        p7.setCalorie(400);
+        p7.getComments().add("Excellentissime !");
+        p7.getComments().add("Délicieux !");
+
+        order3.add(p7);
+
+        p6 = new Product("Spaghetti Carbonara", 11, "Spaghetti avec jambon creme et fromage", R.drawable.spaghetti_carbonara);
+        p6.setRating(3);
+        p6.setCalorie(550);
+        p6.getComments().add("Très bon mais trop gras...");
+        p6.getComments().add("Délicieux !");
+
+        order3.add(p6);
 
         orders.put(1,order1);
         orders.put(2,order2);
+        orders.put(3,order3);
 
         return orders.get(tableNum);
     }
