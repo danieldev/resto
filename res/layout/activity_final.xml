@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/white" >
 
     <TextView
         android:id="@+id/final_text_welcome"
@@ -25,8 +26,7 @@
         <ImageView
             android:id="@+id/final_menu"
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/menu" />
+            android:layout_height="200dp" />
 
         <TextView
             android:id="@+id/final_menu_text"
@@ -51,8 +51,7 @@
         <ImageView
             android:id="@+id/final_water"
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/water" />
+            android:layout_height="200dp" />
 
         <TextView
             android:id="@+id/final_water_text"
@@ -76,8 +75,7 @@
         <ImageView
             android:id="@+id/final_service"
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/service" />
+            android:layout_height="200dp"/>
 
         <TextView
             android:id="@+id/final_service_text"
@@ -101,8 +99,7 @@
         <ImageView
             android:id="@+id/final_rating"
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/star" />
+            android:layout_height="200dp" />
 
         <TextView
             android:id="@+id/final_rating_text"
